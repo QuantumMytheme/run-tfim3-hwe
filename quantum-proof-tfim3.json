@@ -1,0 +1,30 @@
+{
+  "schema": "quantum-harness/proof-bundle@1",
+  "problem_id": "tfim3",
+  "task": "vqe",
+  "circuit": {
+    "n_qubits": 3,
+    "ops": [
+      { "gate": "ry", "q": [0], "params": [1.57056] },
+      { "gate": "ry", "q": [1], "params": [0.97111] },
+      { "gate": "ry", "q": [2], "params": [0.96948] },
+      { "gate": "cx", "q": [0, 1] },
+      { "gate": "cx", "q": [1, 2] }
+    ]
+  },
+  "constraints": {
+    "n_qubits": 3,
+    "max_depth": 12,
+    "native_gates": ["ry", "rz", "rx", "cx", "cz", "h", "x", "sx"],
+    "coupling_map": [[0, 1], [1, 2]],
+    "max_two_qubit_gates": 8
+  },
+  "claim": { "energy": -2.9947640963492943 },
+  "classical_baseline": { "energy": -2.72, "note": "best uniform product (mean-field) state" },
+  "meta": {
+    "author": "opus-4.8",
+    "framework": "json-ir",
+    "ansatz": "hardware-efficient — Ry layer + open-chain CX (3 params, 2 CX)",
+    "note": "first model run on tfim3"
+  }
+}
