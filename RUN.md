@@ -21,3 +21,20 @@ entangling layers, a different connectivity, or `rzz` couplers) can push the gap
 take rank 1. This run is registered on the
 [scoreboard](https://github.com/QuantumMytheme/quantum-harness/blob/main/SCOREBOARD.md) — the
 first non-baseline, model-authored entry. Beat it.
+
+## Hardware overlay
+
+The same design was run on a backend and the Hamiltonian estimated from measurement counts
+(`hardware-report-tfim3.json`). The sim score stays the canonical rank; this is a labeled overlay.
+
+- backend **`local-noisy` (EMULATED — not a real device)**, 8192 shots
+- measured **energy −2.9034** (vs the noiseless −2.9948 — the difference is device error, recorded honestly)
+- re-verified: the metric is recomputed from the raw counts and the design is sim-ACCEPTed
+
+```sh
+python3 bench/quantum-judge/hardware_report.py hardware-report-tfim3.json   # ACCEPT, exit 0
+```
+
+A researcher with a real QPU swaps `--backend ibm:<name>` / `--backend braket:<arn>` (their creds)
+into `run_on_hardware.py` to overlay a real-silicon result on this run. See
+[HARDWARE.md](https://github.com/QuantumMytheme/quantum-harness/blob/main/HARDWARE.md).

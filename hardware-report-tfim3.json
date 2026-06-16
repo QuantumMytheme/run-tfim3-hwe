@@ -1,0 +1,70 @@
+{
+  "schema": "quantum-harness/hardware-report@1",
+  "attests": "quantum-proof-tfim3.json",
+  "problem_id": "tfim3",
+  "task": "vqe",
+  "backend": "local-noisy (EMULATED \u2014 not a real device)",
+  "n_shots": 8192,
+  "settings": [
+    {
+      "pauli": "ZZZ",
+      "counts": {
+        "000": 2431,
+        "111": 2483,
+        "011": 728,
+        "101": 216,
+        "100": 685,
+        "110": 722,
+        "001": 691,
+        "010": 236
+      }
+    },
+    {
+      "pauli": "XXX",
+      "counts": {
+        "000": 6656,
+        "011": 648,
+        "110": 670,
+        "001": 31,
+        "010": 32,
+        "101": 98,
+        "111": 24,
+        "100": 33
+      }
+    }
+  ],
+  "measured": {
+    "metric": "energy",
+    "value": -2.903418,
+    "terms": [
+      {
+        "coeff": -1.0,
+        "pauli": "ZZI",
+        "setting": 0
+      },
+      {
+        "coeff": -1.0,
+        "pauli": "IZZ",
+        "setting": 0
+      },
+      {
+        "coeff": -0.8,
+        "pauli": "XII",
+        "setting": 1
+      },
+      {
+        "coeff": -0.8,
+        "pauli": "IXI",
+        "setting": 1
+      },
+      {
+        "coeff": -0.8,
+        "pauli": "IIX",
+        "setting": 1
+      }
+    ]
+  },
+  "tolerance": 0.05,
+  "run_at": "2026-06-16",
+  "runner": "opus-4.8 (emulated)"
+}
